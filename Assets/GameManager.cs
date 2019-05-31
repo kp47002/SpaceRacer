@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
 
     private bool isSpawning;
     public GameObject cube;
+    public GameObject coin;
     public GameObject pannel;
+    public static int score = 0;
+    double difficulty = 1;
+
+    int rotation = 0;
     // Use this for initialization
     void Start()
     {
@@ -17,6 +23,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        difficulty = 1 + score / 100000;
+        score = (int)System.Math.Ceiling(difficulty * 2);
         if (!isSpawning)
         {
             float timer = Random.Range(1, 2);
@@ -28,9 +36,29 @@ public class GameManager : MonoBehaviour
     }
     void SpawnObject()
     {
+        int coinValue = 0;
+        int enemyValue = 0;
+        rotation++;
+
+        for (int i = -2; i < 3; i++)
+        {
+            int randomValue = Random.Range(0, 100);
+
+            if (randomValue * difficulty > (25 + enemyValue) && enemyValue < 100)
+            {
+                enemyValue += 25;
+                Instantiate(cube, new Vector3(-22, 0.4f, i), Quaternion.identity);
+            }
+            else if (randomValue * difficulty > (25) && coinValue == 0)
+            {
+                coinValue++;
+                Instantiate(coin, new Vector3(-22, 0.4f, i), Quaternion.identity);
+            }
+        }
+
+
         // Code to spanw your Prefab here
-        int lane = Random.Range(-2, 2);
-        Instantiate(cube, new Vector3(-22, 0.4f, lane), Quaternion.identity);
+
         isSpawning = false;
     }
     void SpawnPannel()
