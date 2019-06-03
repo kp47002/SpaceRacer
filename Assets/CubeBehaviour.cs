@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CubeBehaviour : MonoBehaviour
 {
@@ -17,7 +16,7 @@ public class CubeBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * 15 * Time.deltaTime);
+        transform.Translate(direction * GameManager.speed * Time.deltaTime);
         if (transform.position.x > 25)
         {
             Destroy(gameObject);
@@ -34,7 +33,7 @@ public class CubeBehaviour : MonoBehaviour
             if (gameObject.tag == "enemy")
             {
 
-                SceneManager.LoadScene(0);
+                GameManager.GameOver();
             }
             if (gameObject.tag == "coin")
             {

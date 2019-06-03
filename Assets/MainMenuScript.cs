@@ -2,15 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public Text scoreText;
+    public Text highScoreText;
 
+
+
+
+
+    void Awake()
+    {
+
+        scoreText.text = Score.score.ToString();
+        highScoreText.text = Score.highScore.ToString();
+
+
+    }
     public void playGame()
     {
 
-        SceneManager.LoadScene(1);
+
+
         Debug.Log("Change SCENE!!");
+        SceneManager.LoadScene(1);
+
 
     }
 }

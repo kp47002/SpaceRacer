@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,28 +12,44 @@ public class GameManager : MonoBehaviour
     public GameObject coin;
     public GameObject pannel;
     public static int score = 0;
+
+    public static int highScore = 0;
     double difficulty = 1;
+    public Text scoreText;
+    public static int speed = 13;
+    public static bool play = false;
 
     int rotation = 0;
+    int difficultyFactor;
     // Use this for initialization
     void Start()
     {
         isSpawning = false;
+        play = true;
+        score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        difficulty = 1 + score / 100000;
-        score = (int)System.Math.Ceiling(difficulty * 2);
-        if (!isSpawning)
+        if (play)
         {
-            float timer = Random.Range(1, 2);
-            Invoke("SpawnObject", timer);
-            isSpawning = true;
+
+
+            difficulty = 1 + score / 20000;
+            difficultyFactor = (int)System.Math.Ceiling(difficulty * 2);
+            score += difficultyFactor;
+            speed = 13 + 2 * difficultyFactor;
+            if (!isSpawning)
+            {
+                float timer = Random.Range(1, 2);
+                Invoke("SpawnObject", timer);
+                isSpawning = true;
+            }
+            scoreText.text = "SCORE: " + score.ToString();
+            //float timer2 = 5;
+            //   Invoke("SpawnPannel", timer2);
         }
-        //float timer2 = 5;
-        //   Invoke("SpawnPannel", timer2);
     }
     void SpawnObject()
     {
@@ -40,19 +57,20 @@ public class GameManager : MonoBehaviour
         int enemyValue = 0;
         rotation++;
 
-        for (int i = -2; i < 3; i++)
+        int randomSeed = Random.Range(0, 100);
+        for (int i = 0; i < 5; i++)
         {
             int randomValue = Random.Range(0, 100);
 
             if (randomValue * difficulty > (25 + enemyValue) && enemyValue < 100)
             {
                 enemyValue += 25;
-                Instantiate(cube, new Vector3(-22, 0.4f, i), Quaternion.identity);
+                Instantiate(cube, new Vector3(-22, 0.4f, (i + randomSeed) % 5 - 2), Quaternion.identity);
             }
             else if (randomValue * difficulty > (25) && coinValue == 0)
             {
                 coinValue++;
-                Instantiate(coin, new Vector3(-22, 0.4f, i), Quaternion.identity);
+                Instantiate(coin, new Vector3(-22, 0.4f, (i + randomSeed) % 5 - 2), Quaternion.identity);
             }
         }
 
@@ -68,5 +86,18 @@ public class GameManager : MonoBehaviour
         Instantiate(pannel, new Vector3(-22, 0.4f, 0), Quaternion.identity);
 
 
+    }
+    public static void GameOver()
+    {
+        if (score > highScore)
+        {
+            highScore = score;
+        }
+        play = false;
+
+        Score.score = score;
+        Score.highScore = highScore;
+
+        SceneManager.LoadScene(0);
     }
 }
