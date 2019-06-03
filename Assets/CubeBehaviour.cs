@@ -27,7 +27,7 @@ public class CubeBehaviour : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("col");
+
         if (other.gameObject.tag == "Player")
         {
             if (gameObject.tag == "enemy")

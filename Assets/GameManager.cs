@@ -98,6 +98,6 @@ public class GameManager : MonoBehaviour
         Score.score = score;
         Score.highScore = highScore;
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

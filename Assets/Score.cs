@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
-using UnityEditor;
-
-[InitializeOnLoad]
-public static class Score
+public class Score : MonoBehaviour
 {
+
     public static int score = 0;
     public static int highScore = 0;
 
-    // Use this for initialization
+    void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        SceneManager.LoadScene(1);
 
+        // Use this for initialization
+
+    }
 }
