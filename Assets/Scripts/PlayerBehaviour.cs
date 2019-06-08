@@ -7,6 +7,8 @@ public class PlayerBehaviour : MonoBehaviour
 {
     public GameObject shadow;
 
+    GameObject[] laneOccupied = { null, null, null, null, null };
+
     int lane;
     bool left = false, right = false;
     // Use this for initialization
@@ -25,7 +27,10 @@ public class PlayerBehaviour : MonoBehaviour
             right = true;
             if (lane < 2)
             {
-                Instantiate(shadow, new Vector3(22, 0.5f, lane), Quaternion.Euler(0, -90, 0));
+                if (!laneOccupied[lane + 2])
+                {
+                    laneOccupied[lane + 2] = Instantiate(shadow, new Vector3(22, 0.5f, lane), Quaternion.Euler(0, -90, 0));
+                }
 
                 lane++;
             }
@@ -39,7 +44,10 @@ public class PlayerBehaviour : MonoBehaviour
             left = true;
             if (lane > -2)
             {
-                Instantiate(shadow, transform.position, Quaternion.Euler(0, -90, 0));
+                if (!laneOccupied[lane + 2])
+                {
+                    laneOccupied[lane + 2] = Instantiate(shadow, new Vector3(22, 0.5f, lane), Quaternion.Euler(0, -90, 0));
+                }
 
                 lane--;
             }
