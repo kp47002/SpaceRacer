@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
                 isSpawning = true;
             }
             scoreText.text = "SCORE: " + score.ToString();
-            dynamicScoreText.text = "+" + score.ToString();
+            //dynamicScoreText.text = "+" + score.ToString();
 
             //dynamicScoreText.text = "+" + dynamicScore.ToString();
             //float timer2 = 5;
