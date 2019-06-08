@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     public GameObject shadow;
+    public GameObject PlayerFracture;
 
     int lane;
     bool left = false, right = false;
@@ -50,6 +51,16 @@ public class PlayerBehaviour : MonoBehaviour
         }
         transform.position = new Vector3(transform.position.x, transform.position.y, lane);
 
+    }
+    public void Destroy()
+    {
+
+        Transform child = transform.Find("Main Camera"); //Replace "ChildName" with the child objects name.
+        child.parent = null;
+
+        Instantiate(PlayerFracture, PlayerFracture.transform.position + new Vector3(0, 0, lane), Quaternion.Euler(0, -90, 0));
+        Destroy(gameObject);
+        Destroy(this);
     }
 
 }

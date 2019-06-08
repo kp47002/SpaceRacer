@@ -9742,7 +9742,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 748909650}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -24.7, y: 4.5, z: 0}
+  m_LocalPosition: {x: -25.86, y: 4.5, z: 0}
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19277,6 +19277,7 @@ GameObject:
   - component: {fileID: 994676896}
   - component: {fileID: 994676895}
   - component: {fileID: 994676894}
+  - component: {fileID: 994676898}
   m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
@@ -19357,6 +19358,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &994676898
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994676893}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1422230076
 GameObject:
   m_ObjectHideFlags: 0
@@ -19367,7 +19383,6 @@ GameObject:
   - component: {fileID: 1422230077}
   - component: {fileID: 1422230080}
   - component: {fileID: 1422230079}
-  - component: {fileID: 1422230078}
   m_Layer: 0
   m_Name: LineWall3
   m_TagString: Untagged
@@ -19388,18 +19403,6 @@ Transform:
   m_Father: {fileID: 994676897}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1422230078
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1422230076}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1422230079
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19727,6 +19730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407ea3d53b971a546af22dfcedd299cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shadow: {fileID: 0}
+  PlayerFracture: {fileID: 0}
 --- !u!65 &1740277089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24614,6 +24619,18 @@ Prefab:
       propertyPath: cube
       value: 
       objectReference: {fileID: 1059709308236542, guid: a17ed5f586a904d44a4d6380c48a0e18,
+        type: 2}
+    - target: {fileID: 114441800699358338, guid: a53d7e54a5bd6ea48823986dd6aa152a,
+        type: 2}
+      propertyPath: shadow
+      value: 
+      objectReference: {fileID: 1900954229417824, guid: 2569b9f4fc8a96849936207a7deadae3,
+        type: 2}
+    - target: {fileID: 114441800699358338, guid: a53d7e54a5bd6ea48823986dd6aa152a,
+        type: 2}
+      propertyPath: PlayerFracture
+      value: 
+      objectReference: {fileID: 1255478025286786, guid: 33fcfadb77c39fa41ab5d6ced7858d0a,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a53d7e54a5bd6ea48823986dd6aa152a, type: 2}
