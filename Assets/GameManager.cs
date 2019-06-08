@@ -7,17 +7,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+    public Text dynamicScoreText;
+
+    public static int dynamicScore = 0;
+
     private bool isSpawning;
     public GameObject cube;
     public GameObject coin;
     public GameObject pannel;
     public static int score = 0;
 
+    // public Text dynamicScoreText;
 
+    // public static int dynamicScore = 0;
     public static int highScore = 0;
     double difficulty = 1;
     public Text scoreText;
-
     static float GameOverTimer = 2;
     public static int speed = 13;
     public static bool play = false;
@@ -32,6 +37,7 @@ public class GameManager : MonoBehaviour
         isSpawning = false;
         play = true;
         score = 0;
+        //dynamicScore = 0;
         GameOverTimer = 2;
     }
 
@@ -53,6 +59,9 @@ public class GameManager : MonoBehaviour
                 isSpawning = true;
             }
             scoreText.text = "SCORE: " + score.ToString();
+            dynamicScoreText.text = "+" + score.ToString();
+
+            //dynamicScoreText.text = "+" + dynamicScore.ToString();
             //float timer2 = 5;
             //   Invoke("SpawnPannel", timer2);
         }
