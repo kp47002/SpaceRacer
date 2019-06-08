@@ -16,7 +16,9 @@ public class CubeBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * GameManager.speed * Time.deltaTime);
+        transform.Translate(direction * GameManager.speed * Time.deltaTime, Space.World);
+        if (gameObject.tag == "coin")
+            transform.Rotate(10, 0, 0, Space.Self);
         if (transform.position.x > 25)
         {
             Destroy(gameObject);

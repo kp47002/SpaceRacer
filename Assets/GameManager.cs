@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public static int highScore = 0;
     double difficulty = 1;
     public Text scoreText;
+
+    static float GameOverTimer = 2;
     public static int speed = 13;
     public static bool play = false;
 
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
         isSpawning = false;
         play = true;
         score = 0;
+        GameOverTimer = 2;
     }
 
     // Update is called once per frame
@@ -50,6 +53,10 @@ public class GameManager : MonoBehaviour
             //float timer2 = 5;
             //   Invoke("SpawnPannel", timer2);
         }
+        else
+        {
+            GameOverTimer -= Time.deltaTime;
+        }
     }
     void SpawnObject()
     {
@@ -65,12 +72,12 @@ public class GameManager : MonoBehaviour
             if (randomValue * difficulty > (25 + enemyValue) && enemyValue < 100)
             {
                 enemyValue += 25;
-                Instantiate(cube, new Vector3(-22, 0.4f, (i + randomSeed) % 5 - 2), Quaternion.identity);
+                Instantiate(cube, new Vector3(-22, 0.5f, (i + randomSeed) % 5 - 2), Quaternion.Euler(0, -90, 90));
             }
             else if (randomValue * difficulty > (25) && coinValue == 0)
             {
                 coinValue++;
-                Instantiate(coin, new Vector3(-22, 0.4f, (i + randomSeed) % 5 - 2), Quaternion.identity);
+                Instantiate(coin, new Vector3(-22, 0.5f, (i + randomSeed) % 5 - 2), Quaternion.Euler(0, 90, 90));
             }
         }
 
@@ -97,7 +104,10 @@ public class GameManager : MonoBehaviour
 
         Score.score = score;
         Score.highScore = highScore;
+        if (GameOverTimer < 0)
+        {
 
-        SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
+        }
     }
 }
