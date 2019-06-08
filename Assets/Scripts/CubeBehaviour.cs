@@ -38,6 +38,12 @@ public class CubeBehaviour : MonoBehaviour
             if (gameObject.tag == "enemy")
             {
 
+                if (other.gameObject.name == "RealPlayer")
+                {
+                    other.gameObject.GetComponent<PlayerBehaviour>().Destroy();
+                }
+
+
                 GameManager.GameOver();
             }
             if (gameObject.tag == "coin")

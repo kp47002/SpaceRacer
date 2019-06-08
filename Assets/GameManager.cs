@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public static int speed = 13;
     public static bool play = false;
 
+
+
     int rotation = 0;
     int difficultyFactor;
     // Use this for initialization
@@ -85,6 +87,11 @@ public class GameManager : MonoBehaviour
         else
         {
             GameOverTimer -= Time.deltaTime;
+            if (GameOverTimer < 0)
+            {
+
+                SceneManager.LoadScene(1);
+            }
         }
     }
 
@@ -135,6 +142,8 @@ public class GameManager : MonoBehaviour
     }
     public static void GameOver()
     {
+
+
         if (score > highScore)
         {
             highScore = score;
@@ -143,10 +152,6 @@ public class GameManager : MonoBehaviour
 
         Score.score = score;
         Score.highScore = highScore;
-        if (GameOverTimer < 0)
-        {
 
-            SceneManager.LoadScene(1);
-        }
     }
 }

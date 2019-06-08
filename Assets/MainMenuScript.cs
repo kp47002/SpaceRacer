@@ -25,7 +25,6 @@ public class MainMenuScript : MonoBehaviour
     {
 
 
-
         Debug.Log("Change SCENE!!");
         SceneManager.LoadScene(2);
 
