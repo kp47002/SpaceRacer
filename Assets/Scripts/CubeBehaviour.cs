@@ -42,9 +42,10 @@ public class CubeBehaviour : MonoBehaviour
             }
             if (gameObject.tag == "coin")
             {
-                GameManager.dynamicScore += 1000;
 
                 GameManager.score += 1000;
+                GameManager.dynamiclySetScore(1000);
+
             }
         }
         Destroy(gameObject);

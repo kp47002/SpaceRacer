@@ -9,7 +9,12 @@ public class GameManager : MonoBehaviour
 
     public Text dynamicScoreText;
 
+    float timer = 1.0f;
+
+    static string dynamicText = " ";
     public static int dynamicScore = 0;
+
+    public static float onCollectedCoin = 0;
 
     private bool isSpawning;
     public GameObject cube;
@@ -37,6 +42,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         //dynamicScore = 0;
         GameOverTimer = 2;
+
     }
 
     // Update is called once per frame
@@ -57,7 +63,20 @@ public class GameManager : MonoBehaviour
                 isSpawning = true;
             }
             scoreText.text = "SCORE: " + score.ToString();
-            dynamicScoreText.text = "+" + score.ToString();
+            if (onCollectedCoin > 0)
+            {
+                onCollectedCoin -= Time.deltaTime;
+                if (onCollectedCoin <= 0.0f)
+                {
+                    dynamicScoreText.text = "";
+                }
+                else
+                {
+                    dynamicScoreText.text = dynamicText;
+                }
+            }
+
+            //dynamicScoreText.text = "+" + score.ToString();
 
             //dynamicScoreText.text = "+" + dynamicScore.ToString();
             //float timer2 = 5;
@@ -67,6 +86,16 @@ public class GameManager : MonoBehaviour
         {
             GameOverTimer -= Time.deltaTime;
         }
+    }
+
+
+    public static void dynamiclySetScore(int value)
+    {
+        //Debug.Log("value: ");
+        onCollectedCoin = 0.5f;
+
+        dynamicText = "COLLECTED COIN!!  +" + value.ToString();
+
     }
     void SpawnObject()
     {
