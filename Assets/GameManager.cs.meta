@@ -7,6 +7,7 @@ MonoImporter:
   - cube: {fileID: 1059709308236542, guid: a17ed5f586a904d44a4d6380c48a0e18, type: 2}
   - coin: {fileID: 1415343354114132, guid: d04071ebbf824f84b9d58ad1548c5fdd, type: 2}
   - pannel: {instanceID: 0}
+  - shadow: {fileID: 1900954229417824, guid: 2569b9f4fc8a96849936207a7deadae3, type: 2}
   - scoreText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

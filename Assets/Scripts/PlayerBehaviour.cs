@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public GameObject shadow;
 
     int lane;
     bool left = false, right = false;
@@ -12,6 +13,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         lane = 0;
+
     }
 
     // Update is called once per frame
@@ -23,6 +25,8 @@ public class PlayerBehaviour : MonoBehaviour
             right = true;
             if (lane < 2)
             {
+                Instantiate(shadow, new Vector3(22, 0.5f, lane), Quaternion.Euler(0, -90, 0));
+
                 lane++;
             }
         }
@@ -35,6 +39,8 @@ public class PlayerBehaviour : MonoBehaviour
             left = true;
             if (lane > -2)
             {
+                Instantiate(shadow, transform.position, Quaternion.Euler(0, -90, 0));
+
                 lane--;
             }
         }

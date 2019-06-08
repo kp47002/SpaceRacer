@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject pannel;
     public static int score = 0;
 
+
     public static int highScore = 0;
     double difficulty = 1;
     public Text scoreText;
