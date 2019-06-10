@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33040233725350536}
   - component: {fileID: 23706833671011326}
   - component: {fileID: 54155466300265166}
+  - component: {fileID: 65093103420629376}
   m_Layer: 0
   m_Name: StarSparrow2_shard.005
   m_TagString: Untagged
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 33576349076871398}
   - component: {fileID: 23782053588206242}
   - component: {fileID: 54964695641129928}
+  - component: {fileID: 65914852271739548}
   m_Layer: 0
   m_Name: StarSparrow2_shard.008
   m_TagString: Untagged
@@ -58,6 +60,7 @@ GameObject:
   - component: {fileID: 33549892987946894}
   - component: {fileID: 23229945160471054}
   - component: {fileID: 54737592353907690}
+  - component: {fileID: 65606591677803454}
   m_Layer: 0
   m_Name: StarSparrow2_shard.007
   m_TagString: Untagged
@@ -76,6 +79,7 @@ GameObject:
   - component: {fileID: 33603319716446970}
   - component: {fileID: 23662728024920026}
   - component: {fileID: 54903435007416070}
+  - component: {fileID: 65843301559178566}
   m_Layer: 0
   m_Name: StarSparrow2_shard.006
   m_TagString: Untagged
@@ -94,6 +98,7 @@ GameObject:
   - component: {fileID: 33754683334695038}
   - component: {fileID: 23007875663281018}
   - component: {fileID: 54100341670759180}
+  - component: {fileID: 65907921896464390}
   m_Layer: 0
   m_Name: StarSparrow2_shard.004
   m_TagString: Untagged
@@ -112,6 +117,7 @@ GameObject:
   - component: {fileID: 33952476591919984}
   - component: {fileID: 23704543515600778}
   - component: {fileID: 54279035137885616}
+  - component: {fileID: 65790177270905428}
   m_Layer: 0
   m_Name: StarSparrow2_shard
   m_TagString: Untagged
@@ -130,6 +136,7 @@ GameObject:
   - component: {fileID: 33691823620784754}
   - component: {fileID: 23236846054112736}
   - component: {fileID: 54276674810596184}
+  - component: {fileID: 65680005977382636}
   m_Layer: 0
   m_Name: StarSparrow2_shard.009
   m_TagString: Untagged
@@ -148,6 +155,7 @@ GameObject:
   - component: {fileID: 33340422845211294}
   - component: {fileID: 23020478201408358}
   - component: {fileID: 54342976986261134}
+  - component: {fileID: 65624811024700186}
   m_Layer: 0
   m_Name: StarSparrow2_shard.002
   m_TagString: Untagged
@@ -166,6 +174,7 @@ GameObject:
   - component: {fileID: 33134647076383158}
   - component: {fileID: 23044860584540206}
   - component: {fileID: 54557548675356208}
+  - component: {fileID: 65665707379843964}
   m_Layer: 0
   m_Name: StarSparrow2_shard.001
   m_TagString: Untagged
@@ -200,6 +209,7 @@ GameObject:
   - component: {fileID: 33467880216503848}
   - component: {fileID: 23297155365720452}
   - component: {fileID: 54585793556916280}
+  - component: {fileID: 65587305616051582}
   m_Layer: 0
   m_Name: StarSparrow2_shard.003
   m_TagString: Untagged
@@ -930,6 +940,126 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65093103420629376
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1165844996667916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.033117935, y: 0.01571441, z: 0.033344142}
+  m_Center: {x: -0.0023294403, y: 0.0026151163, z: 0.000004272909}
+--- !u!65 &65587305616051582
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981927413321396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012059701, y: 0.009581918, z: 0.008301338}
+  m_Center: {x: -0.00006736048, y: 0.0007606989, z: -0.0012714561}
+--- !u!65 &65606591677803454
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1394697814230000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015999705, y: 0.010709168, z: 0.01564629}
+  m_Center: {x: 0.0022348536, y: -0.00017267931, z: 0.0018693451}
+--- !u!65 &65624811024700186
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685139518282494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016058277, y: 0.0042168894, z: 0.03297324}
+  m_Center: {x: -0.0019751303, y: -0.000031027477, z: -0.005614208}
+--- !u!65 &65665707379843964
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812665256677366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020506026, y: 0.01024751, z: 0.023527475}
+  m_Center: {x: -0.00005919879, y: -0.00005762768, z: 0.000058386024}
+--- !u!65 &65680005977382636
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1529804670875282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03501123, y: 0.013192629, z: 0.0336183}
+  m_Center: {x: -0.0030906291, y: 0.00046369177, z: 0.001758398}
+--- !u!65 &65790177270905428
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1494356350272566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.028274596, y: 0.013308575, z: 0.039684255}
+  m_Center: {x: 0.0007999159, y: 0.0006001103, z: 0.0011729023}
+--- !u!65 &65843301559178566
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460523625997076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.054188695, y: 0.016571093, z: 0.048720416}
+  m_Center: {x: 0.0009868436, y: 0.0024555295, z: -0.0044402797}
+--- !u!65 &65907921896464390
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1488468881422496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034852028, y: 0.0252239, z: 0.04939038}
+  m_Center: {x: -0.0025630028, y: 0.004384214, z: 0.0006911486}
+--- !u!65 &65914852271739548
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388046275743996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0037990385, y: 0.002809232, z: 0.00459918}
+  m_Center: {x: -0.00014516528, y: -0.00023499172, z: -0.000101826525}
 --- !u!114 &114605325367185174
 MonoBehaviour:
   m_ObjectHideFlags: 1

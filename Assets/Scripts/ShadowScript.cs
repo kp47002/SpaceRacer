@@ -21,7 +21,7 @@ public class ShadowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, timeToLive - 0.3f);
+        this.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1, timeToLive / 2);
         //this.GetComponent<Renderer> ().material.color.a = 0.5f;
 
         transform.Translate(direction * 1 * Time.deltaTime, Space.World);

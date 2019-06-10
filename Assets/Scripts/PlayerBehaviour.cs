@@ -8,6 +8,8 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject shadow;
     public GameObject PlayerFracture;
 
+    public GameObject Dash;
+
     GameObject[] laneOccupied = { null, null, null, null, null };
 
     int lane;
@@ -30,10 +32,15 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 if (!laneOccupied[lane + 2])
                 {
-                    laneOccupied[lane + 2] = Instantiate(shadow, new Vector3(22, 0.5f, lane), Quaternion.Euler(0, -90, 0));
+                    laneOccupied[lane + 2] = Instantiate(shadow, new Vector3(22.5f, 0.17f, lane), Quaternion.Euler(0, -90, 0));
                 }
 
                 lane++;
+                Instantiate(Dash, new Vector3(22.5f, 0.17f, lane), Quaternion.Euler(180, 0, 0));
+                if (laneOccupied[lane + 2])
+                {
+                    Destroy(laneOccupied[lane + 2]);
+                }
             }
         }
         else if (!Input.GetKey("right"))
@@ -47,10 +54,15 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 if (!laneOccupied[lane + 2])
                 {
-                    laneOccupied[lane + 2] = Instantiate(shadow, new Vector3(22, 0.5f, lane), Quaternion.Euler(0, -90, 0));
+                    laneOccupied[lane + 2] = Instantiate(shadow, new Vector3(22.5f, 0.17f, lane), Quaternion.Euler(0, -90, 0));
                 }
 
                 lane--;
+                Instantiate(Dash, new Vector3(22.5f, 0.17f, lane), Quaternion.Euler(0, 0, 0));
+                if (laneOccupied[lane + 2])
+                {
+                    Destroy(laneOccupied[lane + 2]);
+                }
             }
         }
         else if (!Input.GetKey("left"))
@@ -64,7 +76,16 @@ public class PlayerBehaviour : MonoBehaviour
     {
 
         Transform child = transform.Find("Main Camera"); //Replace "ChildName" with the child objects name.
-        child.parent = null;
+        try
+        {
+
+            child.parent = null;
+        }
+        catch (System.Exception)
+        {
+
+
+        }
 
         Instantiate(PlayerFracture, PlayerFracture.transform.position + new Vector3(0, 0, lane), Quaternion.Euler(0, -90, 0));
         Destroy(gameObject);

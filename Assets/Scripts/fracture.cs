@@ -8,7 +8,7 @@ public class fracture : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log("i");
+
         Explode();
     }
 
@@ -24,8 +24,8 @@ public class fracture : MonoBehaviour
             var rb = t.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                Debug.Log(i);
-                rb.AddExplosionForce(Random.Range(100, 300), transform.position, 5);
+
+                rb.AddExplosionForce(Random.Range(100, 300), transform.position + new Vector3(Random.Range(2, 4), 3, -1), 10);
             }
         }
     }

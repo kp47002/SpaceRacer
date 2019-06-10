@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
 
             difficulty = 1 + score / 20000;
             difficultyFactor = (int)System.Math.Ceiling(difficulty * 2);
-            score += difficultyFactor;
+            //score += difficultyFactor;
+            score++;
             speed = 13 + 2 * difficultyFactor;
             if (!isSpawning)
             {

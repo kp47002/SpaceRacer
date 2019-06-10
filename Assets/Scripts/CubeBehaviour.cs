@@ -10,7 +10,7 @@ public class CubeBehaviour : MonoBehaviour
 
 
     Vector3 direction = new Vector3(1.0f, 0.0f, 0.0f);
-
+    bool collected = false;
     // Use this for initialization
     void Start()
     {
@@ -40,7 +40,16 @@ public class CubeBehaviour : MonoBehaviour
 
                 if (other.gameObject.name == "RealPlayer")
                 {
-                    other.gameObject.GetComponent<PlayerBehaviour>().Destroy();
+                    try
+                    {
+
+                        other.gameObject.GetComponent<PlayerBehaviour>().Destroy();
+                    }
+                    catch (System.Exception)
+                    {
+
+
+                    }
                 }
 
 
@@ -48,14 +57,18 @@ public class CubeBehaviour : MonoBehaviour
             }
             if (gameObject.tag == "coin")
             {
+                if (!collected)
+                {
+                    collected = true;
 
-                GameManager.score += 1000;
-                GameManager.dynamiclySetScore(1000);
+                    GameManager.score += 1000;
+                    GameManager.dynamiclySetScore(1000);
+                }
+                Destroy(gameObject);
 
+                Destroy(this);
             }
         }
-        Destroy(gameObject);
-        Destroy(this);
     }
 
 }
