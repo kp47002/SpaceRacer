@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1d8545975d5b54ca42ba157107362d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dynamicScoreText: {fileID: 0}
   cube: {fileID: 1146347233885352, guid: f780988a806fcb44a8b628ec527ac874, type: 2}
   coin: {fileID: 1415343354114132, guid: d04071ebbf824f84b9d58ad1548c5fdd, type: 2}
   pannel: {fileID: 0}
@@ -218,3 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407ea3d53b971a546af22dfcedd299cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shadow: {fileID: 0}
+  PlayerFracture: {fileID: 0}
+  Dash: {fileID: 0}

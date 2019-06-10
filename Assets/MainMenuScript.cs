@@ -30,6 +30,16 @@ public class MainMenuScript : MonoBehaviour
 
 
     }
+
+    public void linkToGit()
+    {
+
+
+        Application.OpenURL("https://github.com/kp47002/SpaceRacer");
+
+
+
+    }
 }
 
 
